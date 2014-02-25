@@ -1,0 +1,86 @@
+$code-padding: 0px 8px;
+$code-border: 1px solid white;
+
+$code-font-size: 1em;
+$code-line-height: 1.2em;
+$code-colour-background: #272822;
+$code-colour-line-number: #ffffff;
+$code-colour-number: #ae81ff;
+$code-colour-identifier: #ffffff;
+$code-colour-comment: #75715e;
+$code-colour-multiline-comment: #75715e;
+$code-colour-string: #e6db74;
+$code-colour-keyword: #f92672;
+$code-colour-operator: #f92672;
+
+
+
+.highlighted-code {
+	max-width: 100%;
+	color: $code-colour-line-number;
+	background-color: $code-colour-background;
+	font-family: monospace;
+
+	>.line-numbers {
+		display: inline-block;
+		padding: $code-padding;
+		border-right: $code-border;
+		color: $code-colour-line-number;
+		background-color: $code-colour-background;
+		line-height: $code-line-height;
+		vertical-align: baseline;
+		font: {
+			size: $code-font-size;
+			family: monospace;
+		}
+		text-align: right;
+	}
+
+	>.code {
+		display: inline-block;
+		padding: $code-padding;
+		color: $code-colour-line-number;
+		background-color: $code-colour-background;
+		vertical-align: baseline;
+		text-align: left;
+
+		span {
+			line-height: $code-line-height;
+			vertical-align: baseline;
+			color: $code-colour-line-number;
+			vertical-align: baseline;
+			font: {
+				size: $code-font-size;
+				family: monospace;
+			}
+
+			&.number {
+				color: $code-colour-number;
+			}
+
+			&.identifier {
+				color: $code-colour-identifier;
+			}
+
+			&.comment {
+				color: $code-colour-comment;
+			}
+
+			&.multiline-comment {
+				color: $code-colour-multiline-comment;
+			}
+
+			&.string {
+				color: $code-colour-string;
+			}
+
+			&.keyword {
+				color: $code-colour-keyword;
+			}
+
+			&.operator {
+				color: $code-colour-operator;
+			}
+		}
+	}
+}

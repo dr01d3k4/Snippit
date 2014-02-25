@@ -1,0 +1,39 @@
+{% extends "snippit/base.html" %}
+{% block content %}
+	<section id="index-about">
+		<h1 id="index-about-title">Welcome to Snippit</h1>
+		<section id="index-about-details">
+			Snippit is a new way to share code
+		</section>
+	</section>
+	<section id="index-content">
+		<section id="new-snippet">
+			<h2 id="new-snippet-title">New snippet</h2>
+			<form method="post" action="{% url 'snippit:new-snippet' %}">
+				{% csrf_token %}
+				{% for field in snippetForm.visible_fields %}
+					{{ field.help_text }}
+					{% if field.errors %}{{ field.errors }}{% endif %}
+					<br>
+					{{ field }}<br>
+				{% endfor %}
+				<input type="submit" name="submit" value="Snip!"/>
+			</form>
+		</section>
+		<aside id="snippet-list">
+			<h2>Recent snippets</h2>
+			{% for snippet in recentSnippets %}
+				<article class="recent-snippet">
+					<a href="{{ snippet.absoluteUrl }}">{{ snippet.getTitle }}
+					by
+					{{ snippet.getUsername }}</a>
+					<br>
+					<span>{{ snippet.date }}</span>
+					<br>
+					<span>{{ snippet.get_language_display }}</span>
+				</article>
+				<br><br>
+			{% endfor %}
+		</aside>
+	</section>
+{% endblock %}

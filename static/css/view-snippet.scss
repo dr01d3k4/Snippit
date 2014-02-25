@@ -1,0 +1,18 @@
+$view-snippet-title-group-padding: 8px;
+$view-snippet-title-font-size: 2em;
+
+
+
+#view-snippet-title-group {
+	padding: $view-snippet-title-group-padding;
+
+	>#view-snippet-title {
+		display: inline-block;
+		font-size: $view-snippet-title-font-size;
+	}
+
+	>#view-snippet-user {
+		display: inline-block;
+		font-size: $view-snippet-title-font-size;
+	}
+}

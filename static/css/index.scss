@@ -1,0 +1,73 @@
+$index-about-title-font-size: 2.2em;
+$index-about-details-padding-vertical: 8px;
+
+$index-content-margin-top: 16px;
+$index-new-snippet-width: 79%;
+$index-snippet-list-width: 100% - $index-new-snippet-width;
+$index-content-block-padding: 0px 8px;
+
+$index-content-title-margin-bottom: 8px;
+$index-content-title-font-size: 1.4em;
+
+
+
+#index-about {
+	>#index-about-title {
+		font-size: $index-about-title-font-size;
+	}
+
+	>#index-about-details {
+		padding: $index-about-details-padding-vertical 0px;
+	}
+}
+
+
+
+#index-content {
+	display: block;
+	width: 100%;
+	margin-top: $index-content-margin-top;
+
+	%index-content-block {	
+		@include multi-property(box-sizing, border-box);
+		display: inline-block;
+		float: left;
+		height: 100%;
+
+		h2 {
+			margin-bottom: $index-content-title-margin-bottom;
+			padding: $index-content-block-padding;
+			font-size: $index-content-title-font-size;
+			text-align: center;
+		}
+	}
+
+	#new-snippet {
+		@extend %index-content-block;
+		width: $index-new-snippet-width;
+		border-right: 1px solid $white;
+
+		* {
+			@include multi-property(box-sizing, border-box);
+			width: 100%;
+			padding: 0px 8px;
+		}
+	}
+
+	#snippet-list {
+		@extend %index-content-block;
+		width: $index-snippet-list-width;
+
+		.recent-snippet {
+			padding: 8px;
+
+			a {
+				color: blue;
+
+				&:hover, &:active {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

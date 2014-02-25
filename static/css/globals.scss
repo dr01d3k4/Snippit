@@ -1,0 +1,20 @@
+$black: #000000;
+$white: #ffffff;
+
+$background-colour: darken(#ffffff, 5%);
+$site-colour: #00be00;
+
+
+$font-family: "lucidia", sans-serif;
+
+
+
+$site-width: 960px;
+
+
+
+@mixin multi-property($property, $value) {
+	#{$property}: $value;
+	-moz-#{$property}: $value;
+	-webkit-#{$property}: $value;
+}

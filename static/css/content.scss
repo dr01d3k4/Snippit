@@ -1,0 +1,8 @@
+$index-padding-top: 16px;
+
+#content {
+	padding-top: $index-padding-top;
+	display: block;
+	width: $site-width;
+	margin: auto;
+}

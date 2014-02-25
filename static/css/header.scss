@@ -1,0 +1,56 @@
+$header-height: 38px;
+$inner-header-width: $site-width;
+$header-title-padding: 0px 8px;
+$header-title-colour: $white;
+$header-title-font-size: 2em;
+$header-title-hover-background-colour: lighten($site-colour, 3%);
+
+
+
+#site-header {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: $header-height;
+	top: 0px;
+	left: 0px;
+	background-color: $site-colour;
+
+	>#inner-header {
+		position: relative;
+		width: $inner-header-width;
+		height: 100%;
+		margin: auto;
+
+		#header-title {
+			display: inline-block;
+			padding: $header-title-padding;
+			color: $header-title-colour;
+			line-height: $header-height;
+			font-size: $header-title-font-size;
+
+			&:hover {
+				background-color: $header-title-hover-background-colour;
+			}
+		}
+
+		>nav {
+			float: right;
+
+			>a {
+				line-height: $header-height;
+				color: $header-title-colour;
+
+				&:hover {
+					font-weight: bold;
+
+					&:after {
+						font-weight: bold;
+						color: $header-title-colour;
+						content: " <"
+					}
+				}
+			}
+		}
+	}
+}

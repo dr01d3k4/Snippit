@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>Snippet | {% block title %}Share code!{% endblock %}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	</head>
+	<body>
+		<header id="site-header">
+			<div id="inner-header">
+				<a href="{% url 'snippit:index' %}"><h1 id="header-title">Snippit!</h1></a>
+				<nav>
+					<a href="{% url 'snippit:login' %}">Login</a>
+				</nav>
+			</div>
+		</header>
+		<main id="content">
+			{% block content %}
+			{% endblock %}
+		</main>
+		{% block script %}
+		{% endblock %}
+	</body>
+</html>

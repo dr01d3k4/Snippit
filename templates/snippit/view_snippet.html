@@ -1,0 +1,21 @@
+{% extends "snippit/base.html" %}
+{% load static %}
+{% block title %}{{ snippet.title }}{% endblock %}
+{% block content %}
+	{% if snippet %}
+		<hgroup id="view-snippet-title-group">
+			<h1 id="view-snippet-title">{{ snippet.getTitle }}</h1>
+			<h3 id="view-snippet-user">by {{ snippet.getUsername }}</h3>
+			<h5>written in {{ snippet.get_language_display }}</h5>
+		</hgroup>
+		<pre id="view-snippet-pre"><code id="view-snippet-code"
+			data-should-highlight="{% if snippet.language == 'pt' %}false{% else %}true{% endif %}"
+			data-language="{{ snippet.get_language_display }}">{{ snippet.content }}</code></pre>
+	{% else %}
+		<h1>Snippet not found</h1>
+	{% endif %}
+{% endblock %}
+{% block script %}
+	<script src="{% static 'js/jquery-2.0.3.min.js' %}"></script>
+	<script src="{% static 'js/syntax_highlighter.js' %}"></script>
+{% endblock %}
